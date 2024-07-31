@@ -7,6 +7,7 @@ import { Layout, Main } from "@/ui-core";
 const quicksand = Quicksand({
 	subsets: ["latin"],
 	display: "swap",
+	variable: '--font-quicksand',
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -17,7 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
-			<div className={`${quicksand.className}`}>
+			<div className={`${quicksand.variable} font-sans`}>
 				<Layout>
 					<Main>
 						<Component {...pageProps} />
