@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useUser } from "@clerk/clerk-react";
+import { useUser } from "@clerk/nextjs";
 
 function useLocalStorage<T>(key: string, initialState: T): [T, React.Dispatch<React.SetStateAction<T>>] {
 	const { user, isLoaded } = useUser();

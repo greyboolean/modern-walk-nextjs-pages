@@ -1,4 +1,4 @@
-import { useAuth, useClerk } from "@clerk/clerk-react";
+import { useAuth, useClerk } from "@clerk/nextjs";
 import { useWatchlist } from "../../../../context/watchlist/watchlistContext";
 import { useCart } from "../../../../context/cart/cartContext";
 import { Button } from "../../atoms/Button";

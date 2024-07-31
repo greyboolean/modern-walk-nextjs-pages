@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import Link from "next/link";
-import { SignedIn } from "@clerk/clerk-react";
+import { SignedIn } from "@clerk/nextjs";
 import { Cart } from "../../organisms";
 import { UserAuth } from "../UserAuth";
 import { Button } from "../../atoms/Button";
