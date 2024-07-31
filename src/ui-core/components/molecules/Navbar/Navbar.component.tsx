@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { SignedIn } from "@clerk/clerk-react";
 import { Cart } from "../../organisms";
 import { UserAuth } from "../UserAuth";
@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <nav className="col-start-3 flex items-center justify-end gap-4">
       <SignedIn>
-        <Link to="/watchlist">
+        <Link href="/watchlist">
           {/* <Button>Watchlist</Button> */}
           <Button>
             <ButtonIcon Icon={FaHeart} />
