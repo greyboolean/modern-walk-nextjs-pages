@@ -46,7 +46,7 @@ const Cart = () => {
 
   return (
       <Sheet>
-        <SheetTrigger>
+        <SheetTrigger asChild>
           <Button>
             <ButtonIcon Icon={BsCartFill} />
           </Button>
