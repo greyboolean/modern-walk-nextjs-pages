@@ -1,10 +1,15 @@
-import { Header, Main } from "../components";
+import { ReactNode } from "react";
+import { Header } from "@/ui-core";
 
-function Layout() {
+type LayoutProps = {
+	children: ReactNode;
+};
+
+function Layout({ children }: LayoutProps) {
 	return (
 		<div>
 			<Header />
-			<Main />
+			{children}
 		</div>
 	);
 }

@@ -1,9 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { ReactNode } from "react";
 
-function Main() {
+type MainProps = {
+  children: ReactNode;
+};
+
+function Main({ children }: MainProps) {
   return (
     <main className="mx-16 my-12">
-      <Outlet />
+      {children}
     </main>
   );
 }
