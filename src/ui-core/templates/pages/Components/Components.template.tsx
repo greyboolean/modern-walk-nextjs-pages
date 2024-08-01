@@ -79,7 +79,7 @@ function Components() {
           </div>
           <div>
             <AlertDialog>
-              <AlertDialogTrigger>
+              <AlertDialogTrigger asChild>
                 <Button>Clear Cart</Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
@@ -109,7 +109,7 @@ function Components() {
           </div>
           <div>
             <Dialog>
-              <DialogTrigger>
+              <DialogTrigger asChild>
                 <Button>Pop Up</Button>
               </DialogTrigger>
               <DialogContent>
