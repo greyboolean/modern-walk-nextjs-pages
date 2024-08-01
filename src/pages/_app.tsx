@@ -24,6 +24,12 @@ export default function App({ Component, pageProps }: AppProps) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
+			<style jsx global>{`
+				html {
+					font-family: ${quicksand.style.fontFamily};
+				}
+			`}</style>
+
 			<div className={`${quicksand.variable} font-sans`}>
 				<QueryClientProvider client={queryClient}>
 					<ClerkProvider {...pageProps}>
