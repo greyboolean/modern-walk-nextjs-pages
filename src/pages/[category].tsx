@@ -1,6 +1,7 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { Clothing } from "@/ui-core";
-import { getCategoryfromSlug } from "@/utils/utils";
+import { getCategoryfromSlug, toTitleCase } from "@/utils/utils";
 
 export default function Category() {
 	const router = useRouter();
@@ -10,5 +11,15 @@ export default function Category() {
 
 	const category = getCategoryfromSlug(categorySlug);
 
-	return <Clothing category={category} />;
+	return (
+		<>
+			<Head>
+				<title>{`${toTitleCase(
+					category
+				)}'s Clothing | Modern Walk`}</title>
+			</Head>
+
+			<Clothing category={category} />
+		</>
+	);
 }

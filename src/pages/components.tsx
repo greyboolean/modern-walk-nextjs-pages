@@ -1,6 +1,14 @@
+import Head from "next/head";
 import { Components } from "@/ui-core";
-import React from "react";
 
 export default function components() {
-	return <Components />;
+	return (
+		<>
+			<Head>
+				<title>Components | Modern Walk</title>
+			</Head>
+
+			<Components />
+		</>
+	);
 }
