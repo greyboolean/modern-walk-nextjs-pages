@@ -1,12 +1,11 @@
-import useProducts from "../../../../hooks/useProducts";
 import { Section, ProductGrid, CategoryGrid } from "../../../components";
+import { HomeProps } from "./Home.types";
 
-function Home() {
-	const { products, isLoading } = useProducts();
+function Home({ products }: HomeProps) {
 
 	return (
 		<div>
-			<Section heading="Flash Sale" loading={isLoading}>
+			<Section heading="Flash Sale">
 				<ProductGrid products={products.slice(0, 4)} />
 			</Section>
 			<Section heading="Categories">

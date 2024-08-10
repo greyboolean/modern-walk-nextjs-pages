@@ -1,5 +1,16 @@
-import { Home as HomeTemplate } from "@/ui-core";
+import { getAllProducts } from "@/services/products";
+import { HomeProps, Home as HomeTemplate } from "@/ui-core";
 
-export default function Home() {
-	return <HomeTemplate />;
+export async function getStaticProps() {
+	const products = await getAllProducts();
+
+	return {
+		props: {
+			products,
+		},
+	};
+}
+
+export default function Home({ products }: HomeProps) {
+	return <HomeTemplate products={products} />;
 }
