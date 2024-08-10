@@ -1,3 +1,4 @@
+/*
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { Clothing } from "@/ui-core";
@@ -22,4 +23,9 @@ export default function Category() {
 			<Clothing category={category} />
 		</>
 	);
+}
+*/
+// Adding this to avoid build error: Build optimization failed: found page without a React Component as default export in pages/_old_[category]
+export default function Category() {
+	return null;
 }

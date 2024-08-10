@@ -1,14 +1,25 @@
 import Head from "next/head";
-import { Clothing } from "@/ui-core";
+import { getProductsByCategory } from "@/services/products";
+import { Clothing, ClothingProps } from "@/ui-core";
 
-export default function MensClothing() {
+export async function getServerSideProps() {
+	const products = await getProductsByCategory("men");
+
+	return {
+			props: {
+					products,
+			},
+	};
+}
+
+export default function MensClothing({ products }: ClothingProps) {
 	return (
 		<>
 			<Head>
 				<title>{`Men's Clothing | Modern Walk`}</title>
 			</Head>
 
-			<Clothing category="men" />
+			<Clothing category="men" products={products} />
 		</>
 	);
 }
