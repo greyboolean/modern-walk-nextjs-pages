@@ -21,6 +21,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
 		props: {
 			product,
 		},
+		revaliate: 300,
 	};
 }
 
