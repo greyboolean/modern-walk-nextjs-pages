@@ -61,6 +61,7 @@ export const getProductsByCategory = async (
 	return response.data;
 };
 
+/*
 export const getProductById = async (id: string): Promise<Product | null> => {
 	try {
 		const response = await axios.get(
@@ -70,4 +71,10 @@ export const getProductById = async (id: string): Promise<Product | null> => {
 	} catch (error) {
 		return null;
 	}
+};
+*/
+
+export const getProductById = async (id: string): Promise<Product> => {
+	const response = await axios.get(`https://fakestoreapi.com/products/${id}`);
+	return response.data;
 };

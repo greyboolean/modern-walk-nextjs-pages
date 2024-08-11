@@ -6,9 +6,9 @@ export async function getServerSideProps() {
 	const products = await getProductsByCategory("men");
 
 	return {
-			props: {
-					products,
-			},
+		props: {
+			products,
+		},
 	};
 }
 
@@ -16,7 +16,7 @@ export default function MensClothing({ products }: ClothingProps) {
 	return (
 		<>
 			<Head>
-				<title>{`Men's Clothing | Modern Walk`}</title>
+				<title>Men&apos;s Clothing | Modern Walk</title>
 			</Head>
 
 			<Clothing category="men" products={products} />

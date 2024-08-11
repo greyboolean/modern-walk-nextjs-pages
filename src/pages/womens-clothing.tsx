@@ -16,7 +16,7 @@ export default function MensClothing({ products }: ClothingProps) {
 	return (
 		<>
 			<Head>
-				<title>{`Women's Clothing | Modern Walk`}</title>
+				<title>Women&apos;s Clothing | Modern Walk</title>
 			</Head>
 
 			<Clothing category="women" products={products} />

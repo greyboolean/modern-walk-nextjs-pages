@@ -1,35 +1,36 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
-import type { Product } from "@/models/product";
-import { getProductById } from "@/services/products";
-import { Product as ProductTemplate } from "@/ui-core";
+import { getAllProducts, getProductById } from "@/services/products";
+import { ProductProps, Product as ProductTemplate } from "@/ui-core";
 
-export default function Product() {
-	const router = useRouter();
-	const { id } = router.query;
-	const productId = Array.isArray(id) ? id[0] : id || "";
-	const [product, setProduct] = useState<Product>();
-  const [loading, setLoading] = useState(true);
+export async function getStaticPaths() {
+	const products = await getAllProducts();
+	const paths = products.map((product) => ({
+		params: { id: product.id.toString() },
+	}));
 
-	useEffect(() => {
-		const fetchProduct = async () => {
-			const product = await getProductById(productId);
-			if (product) {
-				setProduct(product);
-        setLoading(false);
-			}
-		};
+	return {
+		paths,
+		fallback: false,
+	};
+}
 
-		fetchProduct();
-	}, [id, productId]);
+export async function getStaticProps({ params }: { params: { id: string } }) {
+	const product = await getProductById(params.id);
 
+	return {
+		props: {
+			product,
+		},
+	};
+}
+
+export default function Product({ product }: ProductProps) {
 	return (
 		<>
 			<Head>
-				<title>{`${product?.title || "Product"} | Modern Walk`}</title>
+				<title>{product.title} | Modern Walk</title>
 			</Head>
-			<ProductTemplate product={product as Product} loading={loading} />
+			<ProductTemplate product={product} />
 		</>
 	);
 }

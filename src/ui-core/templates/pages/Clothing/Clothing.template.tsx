@@ -1,4 +1,3 @@
-import useProducts from "../../../../hooks/useProducts";
 import { toTitleCase } from "../../../../utils/utils";
 import { Section, ProductGrid } from "../../../components";
 import { ClothingProps } from "./Clothing.types";
